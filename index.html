@@ -1,0 +1,1181 @@
+<!DOCTYPE html><html class="scroll-smooth dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport" class="">
+<title>MediNote Repository — Ahmed Istiaq | RpMC-54</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace !important;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif !important;
+    }
+    ::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(3, 7, 18, 0.8);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.25);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(56, 189, 248, 0.5);
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            midnight: "#030712",
+            cardDark: "#0d1527",
+            glassBorder: "rgba(255, 255, 255, 0.08)",
+            accentSky: "#38bdf8",
+            accentIndigo: "#6366f1",
+            accentTeal: "#2dd4bf"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#030712] text-slate-200 antialiased selection:bg-sky-500/30 selection:text-sky-200 min-h-screen relative overflow-x-hidden" style="background-color: rgb(3, 7, 18); background-image: linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px); background-size: 36px 36px;">
+<!-- Ambient Glow Meshes -->
+<div class="fixed top-0 left-1/4 -translate-y-1/2 w-[700px] h-[500px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="fixed top-1/3 right-[-100px] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-10 left-10 w-[650px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+<!-- FLOATING FROSTED HEADER NAVIGATION (Exact Screen 2 Visual Identity) -->
+<header class="fixed top-0 inset-x-0 z-50 px-4 pt-3 pb-2 pointer-events-none">
+<div class="pointer-events-auto mx-auto bg-[#0b1021]/80 backdrop-blur-xl border border-white/10 rounded-full px-4 sm:px-6 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center justify-between gap-4 transition-all duration-300 max-w-7xl">
+<!-- Brand & Identity Monogram -->
+<a class="group flex items-center gap-3 focus:outline-none cursor-pointer" data-path="about" href="#">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 group-hover:scale-105 group-hover:border-sky-400 group-hover:shadow-[0_0_16px_rgba(56,189,248,0.5)] transition-all duration-300 overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuoHFqsX_HHFfa1-C8A2BQHzHCP6eiPFK8VMzXv7PM1cvh4BBw1_VbBwDxTL4x3eT-KBkqEue3-K5RZyboUigPM4j1DWZ3ImATQQ09pgkdIIkFiifA43XsSe3uebFoQQtMSjIGXO74BDIzuo77ws1HpbXlKZcsh3kFP87adhy4IAyx_SHtNSVUSEscYzVkspMkO9r-8MsOwDtPylWmj_QHhVsRArOaCk1jOzi24vabCuz4wPew_0CaXLpA8ESSY1ptk5c" alt="Ahmed Istiaq Logo" class="w-full h-full object-cover rounded-full"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-display text-[15px] font-bold text-white group-hover:text-sky-300 transition-colors tracking-tight">Ahmed Istiaq</span>
+<span class="w-3.5 h-3.5 rounded-full bg-sky-500/20 border border-sky-400/60 flex items-center justify-center text-[9px] text-sky-300 font-bold">✓</span>
+</div>
+<span class="text-[10px] font-mono text-slate-400 tracking-wider">RpMC-54 · SYSTEMS</span>
+</div>
+</a>
+<!-- Central Nav Pills -->
+<nav class="hidden md:flex items-center gap-1 bg-[#030712]/60 border border-white/5 rounded-full p-1 shadow-inner backdrop-blur-md">
+<a class="px-3.5 py-1.5 rounded-full text-slate-300 text-xs font-medium hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-path="about" href="#">Overview&nbsp;</a>
+<a class="px-3.5 py-1.5 rounded-full text-slate-300 text-xs font-medium hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-path="academic-journey" href="#">Identity Matrix</a>
+<a aria-current="page" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/40 shadow-[0_0_16px_rgba(56,189,248,0.3)] flex items-center gap-1.5 cursor-pointer" data-path="medinote-archive" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+<span class="">MediNote Archive</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-slate-300 text-xs font-medium hover:text-white hover:bg-white/5 transition-all cursor-pointer" data-path="selected-projects" href="#">Visual Diary</a>
+</nav>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2.5">
+
+<a class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(56,189,248,0.35)] hover:shadow-[0_0_25px_rgba(56,189,248,0.6)] cursor-pointer" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.922z"></path></svg>
+<span class="">@medinote_139</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-28 pb-16">
+<div class="mx-auto px-4 sm:px-6 flex flex-col gap-10 max-w-7xl">
+<!-- Breadcrumb Bar -->
+<div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1 text-slate-400 hover:text-sky-300 transition-colors font-medium cursor-pointer" data-path="about" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span class="">Ahmed Istiaq Portfolio</span>
+</a>
+<span class="text-slate-600">/</span>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 font-mono text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+<span class="">MediNote Clinical Archive (@medinote_139)</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-slate-400 font-mono text-[11px]">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="">SYNCHRONIZED WITH TELEGRAM CLOUD</span>
+</div>
+</div>
+<!-- HERO BENTO SECTION (Screen 2 Aesthetics) -->
+<section class="relative rounded-3xl bg-[#0d1527]/70 backdrop-blur-md border border-white/10 p-6 sm:p-10 shadow-[0_0_40px_rgba(56,189,248,0.08)] overflow-hidden">
+<!-- Ambient accents -->
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-sky-500/15 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 w-72 h-72 rounded-full bg-indigo-500/15 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-6">
+<!-- Top Telemetry Bar -->
+<div class="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] font-mono tracking-wider uppercase text-slate-400">
+<span class="px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-400/25 font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+              ACTIVE REPOSITORY
+            </span>
+<span class="text-slate-600">•</span>
+<span class="text-slate-300">RMC-54 CLINICAL ARCHIVE</span>
+<span class="text-slate-600">•</span>
+<span class="">Gov. Medical College</span>
+<span class="text-slate-600">•</span>
+<span class="text-emerald-400">LATENCY: &lt;0.1MS OFFLINE-READY</span>
+</div>
+<!-- Bold Headline -->
+<div class="space-y-3 max-w-4xl">
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight leading-tight">
+              MediNote: Curated Medical Archive &amp; 
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 italic font-semibold">Clinical Syntheses</span>
+</h1>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+              Handwritten anatomical blueprints, high-yield physiology mechanisms, biochemical pathways, and ward clinical pearls curated by Ahmed Istiaq. Fully indexed for rapid bedside retrieval and pre-clinical mastery.
+            </p>
+</div>
+<!-- Metrics Bento Cards Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
+<div class="p-4 rounded-2xl bg-[#070e1d]/80 border border-white/5 flex flex-col gap-1 shadow-inner group hover:border-sky-500/30 transition-all">
+<div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">NOTE STRUCTURE</div>
+<div class="text-xl sm:text-2xl font-bold font-display text-sky-400">Vector &amp; PDF</div>
+<div class="text-xs text-slate-400">Illustrated schematics</div>
+</div>
+<div class="p-4 rounded-2xl bg-[#070e1d]/80 border border-white/5 flex flex-col gap-1 shadow-inner group hover:border-indigo-500/30 transition-all">
+<div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">CLOUD REPO</div>
+<div class="text-xl sm:text-2xl font-bold font-display text-indigo-300">Live Sync</div>
+<div class="text-xs text-slate-400">Telegram Cloud updates</div>
+</div>
+<div class="p-4 rounded-2xl bg-[#070e1d]/80 border border-white/5 flex flex-col gap-1 shadow-inner group hover:border-teal-500/30 transition-all">
+<div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">CURATED BOARDS</div>
+<div class="text-xl sm:text-2xl font-bold font-display text-teal-300">50+ Blueprints</div>
+<div class="text-xs text-slate-400">Medical Notes</div>
+</div>
+
+<div class="p-4 rounded-2xl bg-[#070e1d]/80 border border-amber-500/30 flex flex-col gap-1 shadow-inner group hover:border-amber-400/40 transition-all hover:shadow-[0_0_12px_rgba(245,158,11,0.25)]"><div class="text-[10px] font-mono uppercase tracking-wider text-amber-400/80">MBBS BOOKS</div><div class="text-xl sm:text-2xl font-bold font-display text-amber-400">20+ Volumes</div><div class="text-xs text-slate-400">Standard Reference Atlases</div></div></div>
+<!-- Hero Action Buttons -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-xs tracking-wide shadow-[0_0_20px_rgba(56,189,248,0.35)] hover:shadow-[0_0_28px_rgba(56,189,248,0.55)] transition-all cursor-pointer" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.922z"></path></svg>
+<span class="">Join Telegram Channel (@medinote_139)</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-slate-200 text-xs font-medium transition-all cursor-pointer" href="#repositoryCarousels">
+<span class="">Explore MediNotes ↓</span>
+</a>
+</div>
+</div>
+</section>
+<!-- STICKY FILTER & SEARCH DOCK -->
+<section class="sticky top-20 z-40 bg-[#0b1021]/85 backdrop-blur-xl border border-white/10 rounded-2xl p-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.7)] transition-all">
+<div class="flex flex-col md:flex-row items-center justify-between gap-3">
+<!-- Search Input -->
+<div class="relative w-full md:w-80">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<input class="w-full pl-9 pr-14 py-2 bg-[#030712]/70 text-white placeholder-slate-400 border border-white/10 rounded-xl text-xs focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all shadow-inner font-sans" id="repositorySearch" placeholder="Search blueprints, pathways, mnemonics..." type="text">
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+<kbd class="px-1.5 py-0.5 text-[9px] font-mono text-slate-400 rounded bg-white/5 border border-white/10">⌘K</kbd>
+</div>
+</div>
+<!-- Category Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto py-0.5">
+<button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 shrink-0 bg-sky-500 text-slate-950 shadow-[0_0_12px_rgba(56,189,248,0.4)] cursor-pointer" data-filter="all">
+<span class="">All Syntheses</span>
+<span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="totalNotesBadge">26</span>
+</button><button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-medium border border-white/10 hover:border-white/20 hover:text-white transition-all shrink-0 bg-[#030712]/60 text-slate-300 cursor-pointer" data-filter="books">
+              MBBS Books
+            </button>
+<button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-medium border border-white/10 hover:border-white/20 hover:text-white transition-all shrink-0 bg-[#030712]/60 text-slate-300 cursor-pointer" data-filter="anatomy">
+              Anatomy
+            </button>
+<button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-medium border border-white/10 hover:border-white/20 hover:text-white transition-all shrink-0 bg-[#030712]/60 text-slate-300 cursor-pointer" data-filter="physiology">
+              Physiology
+            </button>
+<button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-medium border border-white/10 hover:border-white/20 hover:text-white transition-all shrink-0 bg-[#030712]/60 text-slate-300 cursor-pointer" data-filter="biochemistry">
+              Biochemistry
+            </button>
+<button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-medium border border-white/10 hover:border-white/20 hover:text-white transition-all shrink-0 bg-[#030712]/60 text-slate-300 cursor-pointer" data-filter="histology">
+              Histology
+            </button>
+<button class="filter-tab px-3 py-1.5 rounded-xl text-xs font-medium border border-white/10 hover:border-white/20 hover:text-white transition-all shrink-0 bg-[#030712]/60 text-slate-300 cursor-pointer" data-filter="others">
+              Others &amp; Ward Pearls
+            </button>
+</div>
+</div>
+</section>
+<!-- Empty Results Notice -->
+<div class="hidden py-16 text-center" id="noResultsNotice">
+<div class="p-8 rounded-3xl bg-[#0d1527]/70 border border-white/10 max-w-md mx-auto flex flex-col items-center gap-3 shadow-xl">
+<span class="material-symbols-outlined text-slate-500 text-[42px]">search_off</span>
+<h3 class="font-display text-lg text-white font-bold">No Clinical Document Found</h3>
+<p class="text-xs text-slate-400">No blueprints match your query in the current repository. Try searching broader clinical or anatomical keywords.</p>
+<button class="mt-2 px-4 py-2 rounded-xl bg-sky-500 text-slate-950 font-semibold text-xs hover:bg-sky-400 transition-all shadow-[0_0_14px_rgba(56,189,248,0.3)] cursor-pointer" id="resetSearchBtn">
+            Reset Search Query
+          </button>
+</div>
+</div>
+<!-- MAIN CAROUSEL CONTENT CONTAINERS -->
+<div class="flex flex-col gap-12" id="repositoryCarousels"><!-- 0. MBBS BOOKS & ATLASES SECTION -->
+<section class="category-block flex flex-col gap-4" data-category="books" id="section-mbbs-books"><div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-display font-bold text-lg text-white">MBBS Textbooks &amp; Clinical Atlases</h2>
+<span class="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-[10px]">5 ATLASES &amp; BOOKS</span>
+</div>
+<p class="text-xs text-slate-400">Standard pre-clinical textbooks, clinical references &amp; high-res digital scans</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-400/40 flex items-center justify-center text-slate-300 hover:text-amber-300 transition-all cursor-pointer" data-dir="prev" data-track="track-books" title="Previous">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-400/40 flex items-center justify-center text-slate-300 hover:text-amber-300 transition-all cursor-pointer" data-dir="next" data-track="track-books" title="Next">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-track flex items-stretch gap-4 overflow-x-auto scroll-smooth pb-2" id="track-books">
+<!-- Book Card 1 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] group overflow-hidden" data-tags="books anatomy chaurasia bdc gross limbs thorax abdomen" data-title="bd chaurasia human anatomy 9th edition all volumes">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="BD Chaurasia Human Anatomy 9th Edition Book Cover" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFxzem40j5wPirE9BSOavAj-Ry2FAHlprte01-3uFkyDlbZENWuj6qT2-GFvBz3siI6RWvAUrtikvA0Sn4pDjjpeeuaiq9xnZBBpetwtmOTrTNaDH5LVQSQK7vfvgZeAHFBb3zLTIJV98IOcGqe6EPvKgk8jxIYQfugmtvGAE2TcU6AW3hpPivEZuEXADpI-AcbxuUBoC-hFISwOJc2VKEYd_DMi1nyM6kjyKf-ssrDCERP8NEnvDZpA">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-amber-500/30 backdrop-blur-md text-amber-400 font-mono text-[10px]">Standard Anatomy</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-amber-300">
+<span class="">9th Ed • 4-Vol Set</span>
+<span class="text-amber-400/80">Regional Anatomy</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-amber-300 transition-colors">BD Chaurasia's Human Anatomy (9th Ed)</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Complete clinical anatomy reference with dissection steps, muscle attachments, neurovascular bundles, and cross-sectional diagrams.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Complete PDF Atlas</span>
+<a class="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Book Card 2 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] group overflow-hidden" data-tags="books physiology guyton hall medical physiology homeostasis" data-title="guyton and hall textbook of medical physiology 14th edition">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Guyton and Hall Textbook of Medical Physiology" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkR2SUOw-AvCVwOmWMhKC66VyFr7B_ckSEEGGAsJkoqc4JcIjsDKTTkpaN_5On9N45UBhd-jgLcfR8q7fyrbv2EosRL0ey9tqD2ty7MhZ-c8QCG0j4cXC657VVPiDqzmiGYxT9-NB8D-KrNLVZfsm9DXLFYD3iKRDx-2rPZ-LAhM-VQlxv37PjpE7vUXsLpyLagAmC_dOm-XVQWf3ekrG7Ie1NL6jg1KuLcyxyt4xrNY3B-4LivQ57A">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-amber-500/30 backdrop-blur-md text-amber-400 font-mono text-[10px]">Physiology Master</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-amber-300">
+<span class="">14th Ed • Guyton &amp; Hall</span>
+<span class="text-amber-400/80">Gold Standard</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-amber-300 transition-colors">Guyton &amp; Hall: Medical Physiology (14th Ed)</h3>
+<p class="text-xs text-slate-400 line-clamp-2">The premier source for systemic physiology, cardiovascular dynamics, renal clearance, membrane energetics, and neurohumoral feedback systems.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Digital E-Book</span>
+<a class="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Book Card 3 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] group overflow-hidden" data-tags="books biochemistry harpers clinical metabolism molecular genetics" data-title="harpers illustrated biochemistry 32nd edition">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Harper's Illustrated Biochemistry 32nd Edition" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAB39SjvukxNndieooEiZYTcYcZfIIIEVIgwP3SuAZP32SLpJIQj70AfCbK84FzocUT162BsRZXER3FD5-ylN9VCxCrVkt6F69opg0fTJcZgPw0ltuvnGlihCqpyRAlpxgyiFtdgVkjgKCbi1B2GCeZIqf_t97clp5UGTVu5iWRX97UEiDUz8xqJ5Zo-x-_7O6NB6Z1ZdAGnFf-xLNQ49g397ccJLTUtkoDq5Zv-hF5rTqWdtZHivBAw">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-amber-500/30 backdrop-blur-md text-amber-300 font-mono text-[10px]">Biochemistry</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-amber-300">
+<span class="">32nd Ed • Harper's</span>
+<span class="text-amber-400/80">Enzymes &amp; Pathways</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-amber-300 transition-colors">Harper's Illustrated Biochemistry (32nd Ed)</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Authoritative clinical biochemistry guide detailing bioenergetics, metabolic regulation, porphyrias, inborn errors of metabolism, and genomics.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Full Vector PDF</span>
+<a class="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Book Card 4 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] group overflow-hidden" data-tags="books pathology robbins cotran pathologic basis disease" data-title="robbins and cotran pathologic basis of disease 10th edition">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Robbins and Cotran Pathologic Basis of Disease" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvwxh_ZW7NSk9c9Rz8mqhU7FmX4THxDugTUcfWe0ot3rCG2onuwrhS8F8-X3tHNu9nOcprlOZG9Peh9LpkR8w1m4VjA2_TBBbLEctFOUpZnPZype2P8il63FXLJ5zzvzRVR5HCNW8RRXc9y_di7xmJ4slQz-KUB-bmtkNCiPdp4Ce7ARRi-Cwk0b0451SSlSLDjN1-RJtS3WXpWRZ3iBB9UFylS3H5E4w77QGbW0I3LTT62WAbFBZwA">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-amber-500/30 backdrop-blur-md text-amber-300 font-mono text-[10px]">Pathology Core</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-amber-300">
+<span class="">10th Ed • Robbins &amp; Cotran</span>
+<span class="text-amber-400/80">Systemic Pathology</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-amber-300 transition-colors">Robbins &amp; Cotran: Pathologic Basis (10th Ed)</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Essential cellular and systemic pathology reference covering injury mechanisms, inflammatory cascades, oncogenesis, and organ-specific diseases.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Complete Illustrated Book</span>
+<a class="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Book Card 5 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] group overflow-hidden" data-tags="books medicine davidson clinical internal medicine bedside" data-title="davidsons principles and practice of medicine 24th edition">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Davidson's Principles and Practice of Medicine 24th Edition" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhPmsUCwxj960FLETbFsrRvpSz-mpWwVxk12yZ9O9R2SBmkTxpR1voB2nAOWrm4PFNfvDj83hSRsbAzw-tlZ--o2tufFVcQ1u4HpSPzV03z2YSNOsl0i9Xa11011-x3dqu9-xkH5eAo04waFMoUVw1l1vZTG2QnccPpntolwiFYE5vJupZiI411ghS-4iBYEYTaQtf-HRADHrottu9NtECjX7m_7zAuA1gtpNSvIe_mMrhnXA11WBdBw">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-amber-500/30 backdrop-blur-md text-amber-400 font-mono text-[10px]">Clinical Medicine</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-amber-300">
+<span class="">24th Ed • Davidson's</span>
+<span class="text-amber-400/80">Bedside Companion</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-amber-300 transition-colors">Davidson's Principles &amp; Practice of Medicine (24th)</h3>
+<p class="text-xs text-slate-400 line-clamp-2">The quintessential guide to internal medicine, bedside presentations, differential diagnoses, emergency management, and therapeutic regimens.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">High-Yield E-Edition</span>
+<a class="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</div></section>
+
+<!-- 1. ANATOMY & NEUROANATOMY SECTION -->
+<section class="category-block flex flex-col gap-4" data-category="anatomy" id="section-anatomy">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.25)]">
+<span class="material-symbols-outlined text-[20px]">accessibility_new</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-display font-bold text-lg text-white">Anatomy &amp; Neuroanatomy</h2>
+<span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-sky-300 font-mono text-[10px]">5 GUIDES</span>
+</div>
+<p class="text-xs text-slate-400">Gross anatomical schematics, neurovascular plexuses, triangles &amp; cranial pathways</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="prev" data-track="track-anatomy" title="Previous">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="next" data-track="track-anatomy" title="Next">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-track flex items-stretch gap-4 overflow-x-auto scroll-smooth pb-2" id="track-anatomy">
+<!-- Anatomy Card 1 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="anatomy gross brachial plexus upper limb nerves erbs palsy" data-title="gross anatomy brachial plexus breakdown roots trunks cords branches">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Hand-drawn Brachial Plexus schematic" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFxzem40j5wPirE9BSOavAj-Ry2FAHlprte01-3uFkyDlbZENWuj6qT2-GFvBz3siI6RWvAUrtikvA0Sn4pDjjpeeuaiq9xnZBBpetwtmOTrTNaDH5LVQSQK7vfvgZeAHFBb3zLTIJV98IOcGqe6EPvKgk8jxIYQfugmtvGAE2TcU6AW3hpPivEZuEXADpI-AcbxuUBoC-hFISwOJc2VKEYd_DMi1nyM6kjyKf-ssrDCERP8NEnvDZpA">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Plexus Blueprint</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">7 min read • High Yield</span>
+<span class="text-slate-400">C5-T1 Schematic</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Gross Anatomy: Brachial Plexus Breakdown</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Roots, trunks, divisions, cords, and terminal branches with clinical lesion correlations (Erb's Duchenne &amp; Klumpke's paralysis).</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Color Mnemonics</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Anatomy Card 2 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="anatomy neuroanatomy circle willis cranial nerves brainstem stroke" data-title="neuroanatomy circle of willis cranial nerve nuclei">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Neuroanatomy Circle of Willis arterial diagram" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgXwktaiBkKkxFtIpRiNaCG7IPKPjFTE6ZnmCdSVCcJZbXmE_KW4xupKjZbV1nnq2pEwscAAJMiyg_tMsTMmRYTNWsJYTa44D62UfFiPLfHbOQnqvuBe1Rgu3MONcRzoaSKoAjR9dOH_UEheo8g_dXkwoPUpCyjWPk8YIYfIYEQTCaOBkGqAx47QJvpqkYOK9cEThq7wMQY5tUlPDEEPi9mNpnktO9E5SW-jkz3-lePKZNhZzlMas_VQ">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Arterial Ring</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">8 min read • Neuroanatomy</span>
+<span class="text-slate-400">Cerebrovascular</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Neuroanatomy: Circle of Willis &amp; Cranial Nerves</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Internal carotid and basilar system anastomoses, berry aneurysm locations, and corresponding cranial nerve exits (I-XII).</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Vascular Mapping</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Anatomy Card 3 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="anatomy viscera peritoneum pouch morison douglas inguinal canal hernia" data-title="visceral anatomy peritoneal spaces pouches inguinal canal hernia">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Peritoneal spaces and folds illustration" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFZmcpl7gk3gShKWsjtMn8YZjiFcHMsvRo8hFHKzITrGJm06IrnHdVKzJSr40u2cEmCRfkyfu1RN2Gcf6PqKjGB0KNRaoq2dGi8O3iQezp9PW0FzHy8IdhIoHvNp27Nw4KrdD6fl-BNkogU7e4dPBdST_dX-PkusgxCpnYwW4dhDzweIwJpBm-einBerhbJACDKQd-wXZsttxYQMARGo_ZrKvW1abEb7WaP_JZV-Dg30PTgCbLFx4PgQ">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Abdominal Cavity</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">6 min read • Ward Prep</span>
+<span class="text-slate-400">Peritoneal Spaces</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Visceral Anatomy: Peritoneal Pouches &amp; Inguinal Canal</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Hepatorenal pouch of Morison, rectovesical/Douglas pouches, and inguinal canal boundaries with direct vs indirect hernia differentials.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Cross-sectional Views</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Anatomy Card 4 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="anatomy head neck triangles carotid submandibular muscular posterior" data-title="head and neck triangles anterior posterior boundaries contents">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Head and neck triangles schematic" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7xmnsrjy4ka2I0FFbTVvBg1T4U4apf_BOwo0mE8kyBI_jOijxr5Wl0TYI53Yiof9_W7W4wXwT6Qmlc0Q8zWWDkE7SYB08DTvHmcP28tPCrIfXykchYGXTUupV-et2cWmBhhxvkxVO1gnba8rTjo9jneGhcrUpqfi3rOS5SvWfQVA_Hsb6TcG8Fj756uA-DcpeqemrPa8odN13htfgsga42uM3_89BpkbbCDP-dmEYxY_kT6ONwGUBvg">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Head &amp; Neck</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">5 min read • Spotter Core</span>
+<span class="text-slate-400">Fascial Layers</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Head &amp; Neck: Triangles of Neck</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Anterior and posterior triangle subdivisons (carotid, digastric, muscular, occipital, subclavian) with critical neurovascular contents.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Surgical Dissection Guide</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Anatomy Card 5 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="anatomy embryology pharyngeal arches pouches clefts branchial anomalies" data-title="embryology pharyngeal arches pouches clefts derivatives">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Pharyngeal apparatus embryology schematic" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_v81rGSVTJkD6iSauZ1AibkxRXM0YBqzN3Z4id6tpZjz32J7Dbox_JBB9NjhFY0PPapTvY-nzanYB6rK0S2qqfKxwhJLFivrEr4e0I3tME8pDmcfhuv5roA7SGNylk0OlLu6GMOH3OTAHy3VQlZ416K0ipY3oRBWbGb3sYHz66WoSvWnnYxqG7XyElC0BtHoMoXmUTs1hgBejn81M2N02iZETjhNR2YseSv-RY-CMK0yKJmBmubtKyg">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Embryology</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">6 min read • Pre-Clinical</span>
+<span class="text-slate-400">Arch Derivatives</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Embryology: Pharyngeal Arches, Pouches &amp; Clefts</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Skeletal, muscular, and cranial nerve derivatives of branchial arches 1 through 6, and congenital fistula/cyst formations.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Derivatives Matrix</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 1. PHYSIOLOGY SECTION -->
+<section class="category-block flex flex-col gap-4" data-category="physiology"><div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 shadow-[0_0_12px_rgba(244,63,94,0.25)]"><span class="material-symbols-outlined text-[20px]">vital_signs</span></div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-display font-bold text-lg text-white">Physiology</h2>
+<span class="px-2 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 font-mono text-[10px]">5 GUIDES</span>
+</div>
+<p class="text-xs text-slate-400">Cardiovascular hemodynamics, renal multiplier &amp; electrophysiology</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-rose-400/40 flex items-center justify-center text-slate-300 hover:text-rose-300 transition-all cursor-pointer" data-dir="prev" data-track="track-physiology" title="Previous"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-rose-400/40 flex items-center justify-center text-slate-300 hover:text-rose-300 transition-all cursor-pointer" data-dir="next" data-track="track-physiology" title="Next"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+<div class="carousel-track flex items-stretch gap-4 overflow-x-auto scroll-smooth pb-2" id="track-physiology"><article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-rose-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(244,63,94,0.15)] group overflow-hidden" data-tags="physiology cardiology wiggers heart ecg" data-title="cardiac cycle wiggers diagram valve hemodynamics"><div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10"><img alt="Cardiac cycle Wiggers Diagram plotting aortic pressure and ECG" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkR2SUOw-AvCVwOmWMhKC66VyFr7B_ckSEEGGAsJkoqc4JcIjsDKTTkpaN_5On9N45UBhd-jgLcfR8q7fyrbv2EosRL0ey9tqD2ty7MhZ-c8QCG0j4cXC657VVPiDqzmiGYxT9-NB8D-KrNLVZfsm9DXLFYD3iKRDx-2rPZ-LAhM-VQlxv37PjpE7vUXsLpyLagAmC_dOm-XVQWf3ekrG7Ie1NL6jg1KuLcyxyt4xrNY3B-4LivQ57A"><span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-rose-500/30 backdrop-blur-md text-rose-300 font-mono text-[10px]">Hemodynamics</span></div><div class="p-4 flex flex-col justify-between flex-grow gap-3"><div class="space-y-1.5"><div class="flex items-center justify-between text-[11px] font-mono text-rose-300"><span class="">8 min read • Critical Core</span><span class="text-slate-400">Diagram Sheet</span></div><h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-rose-300 transition-colors">Cardiac Cycle: Wiggers Diagram &amp; Valve Hemodynamics</h3><p class="text-xs text-slate-400 line-clamp-2">Complete temporal alignment of aortic, ventricular, atrial pressure curves, heart sounds (S1-S4), and volume loop changes.</p></div><div class="pt-2.5 flex items-center justify-between border-t border-white/5"><span class="text-[11px] text-slate-400 font-mono">Step-by-step Curves</span><a class="inline-flex items-center gap-1 text-rose-400 hover:text-rose-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank"><span class="">Open in Telegram</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a></div></div></article><article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-rose-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(244,63,94,0.15)] group overflow-hidden" data-tags="physiology renal kidney loop henle vasa recta" data-title="renal clearance countercurrent multiplier system nephron"><div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10"><img alt="Physiological illustration of nephron osmotic gradients" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1y-GnGazRpu5PVg8eOLKMIkIGjqXk4PxERFHCKfoaFydk7QDdFhqGPl8mlyJEys3sj9IKCZWelvsMTCu1q2O9sW4rncQtKiIMcVvU93BhL3uoSTBpcEkd8LF5z_iKK04xtS1ym4Pwg6LdMZHAwSgGVEI1UyJVy4zCaGvu6ktwNFXw0GkbJsi3631Qs4sd7-MK_zfNPsmepD_DgTcABiN1UK9SJ6muwnmC7wpa6vyjYJ3acQCTGK8nZg"><span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-rose-500/30 backdrop-blur-md text-rose-300 font-mono text-[10px]">Renal Systems</span></div><div class="p-4 flex flex-col justify-between flex-grow gap-3"><div class="space-y-1.5"><div class="flex items-center justify-between text-[11px] font-mono text-rose-300"><span class="">6 min read • High-Yield</span><span class="text-slate-400">Osmolality</span></div><h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-rose-300 transition-colors">Renal Clearance &amp; Countercurrent Multiplier</h3><p class="text-xs text-slate-400 line-clamp-2">Corticomedullary hyperosmotic gradient generation, loop of Henle ion transporters, and ADH regulated aquaporin channels.</p></div><div class="pt-2.5 flex items-center justify-between border-t border-white/5"><span class="text-[11px] text-slate-400 font-mono">Osmotic Map</span><a class="inline-flex items-center gap-1 text-rose-400 hover:text-rose-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank"><span class="">Open in Telegram</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a></div></div></article><article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-rose-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(244,63,94,0.15)] group overflow-hidden" data-tags="physiology neurophysiology ion channels axon" data-title="action potential synaptic transmission kinetics channels"><div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10"><img alt="Electrophysiology graph showing axonal voltage changes" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgXwktaiBkKkxFtIpRiNaCG7IPKPjFTE6ZnmCdSVCcJZbXmE_KW4xupKjZbV1nnq2pEwscAAJMiyg_tMsTMmRYTNWsJYTa44D62UfFiPLfHbOQnqvuBe1Rgu3MONcRzoaSKoAjR9dOH_UEheo8g_dXkwoPUpCyjWPk8YIYfIYEQTCaOBkGqAx47QJvpqkYOK9cEThq7wMQY5tUlPDEEPi9mNpnktO9E5SW-jkz3-lePKZNhZzlMas_VQ"><span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-rose-500/30 backdrop-blur-md text-rose-300 font-mono text-[10px]">Electrophysiology</span></div><div class="p-4 flex flex-col justify-between flex-grow gap-3"><div class="space-y-1.5"><div class="flex items-center justify-between text-[11px] font-mono text-rose-300"><span class="">5 min read • Core</span><span class="text-slate-400">Conductance</span></div><h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-rose-300 transition-colors">Action Potential &amp; Synaptic Transmission Kinetics</h3><p class="text-xs text-slate-400 line-clamp-2">Voltage-gated sodium channel gates (m and h), refractory periods, and vesicular exocytosis mechanics.</p></div><div class="pt-2.5 flex items-center justify-between border-t border-white/5"><span class="text-[11px] text-slate-400 font-mono">Waveform Analysis</span><a class="inline-flex items-center gap-1 text-rose-400 hover:text-rose-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank"><span class="">Open in Telegram</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a></div></div></article><article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-rose-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(244,63,94,0.15)] group overflow-hidden" data-tags="physiology respiratory acid-base abg icu compensation" data-title="respiratory acid-base balance compensation nomogram abg"><div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10"><img alt="Acid base nomogram showing pH and PaCO2" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfHObF3FBkIbEZheVUCtJ2MoZdwYQyo7E9Dy71l9s09UdgeDNUC_ha2gXKQXr38ss7h_QPUdfDAWp40KQS0gGprSjJ8SunvKm0p_KW6GBpI8n-JBboqs7aLLSepi6UPnpmd3IJuQdLkWliirLmWENpL91yDudefjgEScJaSAPFNXOoNL6fpWtQ4D7k9eIh5vnwDyjOD5E9EUc_0NQemhhjK54QX75sE6SNlwMKSI5mr00k9nqaoyerVA"><span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-rose-500/30 backdrop-blur-md text-rose-300 font-mono text-[10px]">Pulmonary &amp; ABG</span></div><div class="p-4 flex flex-col justify-between flex-grow gap-3"><div class="space-y-1.5"><div class="flex items-center justify-between text-[11px] font-mono text-rose-300"><span class="">7 min read • Clinical High-Yield</span><span class="text-slate-400">Nomogram</span></div><h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-rose-300 transition-colors">Respiratory Acid-Base Balance &amp; ABG Nomogram</h3><p class="text-xs text-slate-400 line-clamp-2">Winter's formula for metabolic acidosis compensation, acute vs chronic respiratory compensation rules, and delta-gap calculation.</p></div><div class="pt-2.5 flex items-center justify-between border-t border-white/5"><span class="text-[11px] text-slate-400 font-mono">ICU Math Included</span><a class="inline-flex items-center gap-1 text-rose-400 hover:text-rose-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank"><span class="">Open in Telegram</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a></div></div></article><article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-rose-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(244,63,94,0.15)] group overflow-hidden" data-tags="physiology endocrine hormones pituitary thyroid" data-title="endocrine hypothalamic pituitary axis feedback loops"><div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10"><img alt="Endocrine axis feedback loops" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ5ZlESs6T0xAfiAFfVeDR5pZMR5xGr81hpry1lAOk4EKQHBYu1AtiqvQA5LdWGJKMPq4leYUIGWfxgy7ztudVOOO8YNMu2AyMp6ISADydngP7697rlaE9bRYcst3AgFOjTuCvfrBkZK9V3dNfUrzZ4cqsDewUVAlMmVXOW-weub1gMk248_gXD5Ittx21S_wNSItjQk0E1-9j9_NL0iDp8hFeWQQ2GPviOWBVaGvq_PaoQtLdsNwBkg"><span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-rose-500/30 backdrop-blur-md text-rose-300 font-mono text-[10px]">Endocrinology</span></div><div class="p-4 flex flex-col justify-between flex-grow gap-3"><div class="space-y-1.5"><div class="flex items-center justify-between text-[11px] font-mono text-rose-300"><span class="">6 min read • Synthesis</span><span class="text-slate-400">Feedback Loop</span></div><h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-rose-300 transition-colors">Hypothalamic-Pituitary Axis Feedback Loops</h3><p class="text-xs text-slate-400 line-clamp-2">HPA, HPT, and HPG axes, ultra-short vs long loop feedback, and primary vs secondary failure laboratory distinctions.</p></div><div class="pt-2.5 flex items-center justify-between border-t border-white/5"><span class="text-[11px] text-slate-400 font-mono">Algorithm Chart</span><a class="inline-flex items-center gap-1 text-rose-400 hover:text-rose-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank"><span class="">Open in Telegram</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a></div></div></article></div></section>
+<!-- 2. BIOCHEMISTRY SECTION -->
+<section class="category-block flex flex-col gap-4" data-category="biochemistry">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 shadow-[0_0_12px_rgba(45,212,191,0.25)]">
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-display font-bold text-lg text-white">Biochemistry</h2>
+<span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-teal-300 font-mono text-[10px]">4 PATHWAYS</span>
+</div>
+<p class="text-xs text-slate-400">Enzymatic regulation, bioenergetics, lipid fractions &amp; molecular genetics</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="prev" data-track="track-biochemistry" title="Previous">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="next" data-track="track-biochemistry" title="Next">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-track flex items-stretch gap-4 overflow-x-auto scroll-smooth pb-2" id="track-biochemistry">
+<!-- Card 1 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-teal-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(45,212,191,0.15)] group overflow-hidden" data-tags="biochemistry metabolism glycolysis tca krebs etc mitochondria" data-title="glycolysis tca cycle electron transport chain master flowchart">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Biochemical metabolic roadmap" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAB39SjvukxNndieooEiZYTcYcZfIIIEVIgwP3SuAZP32SLpJIQj70AfCbK84FzocUT162BsRZXER3FD5-ylN9VCxCrVkt6F69opg0fTJcZgPw0ltuvnGlihCqpyRAlpxgyiFtdgVkjgKCbi1B2GCeZIqf_t97clp5UGTVu5iWRX97UEiDUz8xqJ5Zo-x-_7O6NB6Z1ZdAGnFf-xLNQ49g397ccJLTUtkoDq5Zv-hF5rTqWdtZHivBAw">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-teal-300 font-mono text-[10px]">Bioenergetics</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-teal-300">
+<span class="">9 min read • Master Map</span>
+<span class="text-slate-400">ATP Accounting</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-teal-300 transition-colors">Glycolysis, TCA Cycle &amp; ETC Master Flowchart</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Allosteric regulators of PFK-1, Pyruvate Dehydrogenase complex cofactors (TLCFN), and mitochondrial Complex I-IV inhibitors.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Mnemonics Included</span>
+<a class="inline-flex items-center gap-1 text-teal-300 hover:text-teal-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-teal-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(45,212,191,0.15)] group overflow-hidden" data-tags="biochemistry lipids ldl hdl chylomicrons cholesterol" data-title="lipoprotein metabolism hyperlipidemia classifications apo">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Lipoprotein metabolism pathways" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCArCrHydO0jxjMGgPyhpZLv0AzVF85mZNeosjKVFdzB1KABX48XuiCqypzLnD0r1vnTOyENg8Ox_f6thixWTm5II-sjR9di-ySmb97TeAb8TdhFOHcSYa7c4hv0BVx4X0EXdF8f7NmVV98KGIOOvhLgTVDOp42-SGpP7FoFH3VO36j_-qJSj5_qCqub8rWNpF6p3ANwq8lYSHQ0jB7ifukPhqF-bUp9A9G5lF9ijpVnyY8Hne0UAZXEQ">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-teal-300 font-mono text-[10px]">Lipid Transport</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-teal-300">
+<span class="">5 min read • High-Yield</span>
+<span class="text-slate-400">Fredrickson Map</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-teal-300 transition-colors">Lipoprotein Metabolism &amp; Hyperlipidemias</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Exogenous and endogenous pathways, ApoA1, B-100, C-II, E distribution, and familial hyperlipidemia phenotypes.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Stratification Guide</span>
+<a class="inline-flex items-center gap-1 text-teal-300 hover:text-teal-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-teal-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(45,212,191,0.15)] group overflow-hidden" data-tags="biochemistry heme porphyria lead poisoning hematology" data-title="heme synthesis porphyrias clinical correlation lead">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Heme biosynthesis and porphyrias" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkaGOqsYXDgXKgSchchH3HBDUc6wGorSJm1wS_zCv2WnqtE07ghvlMZT7R2oel_RzDDHhlYHnIF9Jzsff7m0fAAEcPWTecuW0BM6SBKDoRJMMU90V7pS7QToVJUd1xxnz0cTdYregRWN5e45InS5Nd5NmqsPmFuAXytGfI4FPylo4EQL7Mhkd2ZuFYS-KIAfuRKNxJkhiVue6gKlbOnOvuv1G051uE5LXZPb14LFZdvq4xOxfDRT1krQ">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-teal-300 font-mono text-[10px]">Heme Pathways</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-teal-300">
+<span class="">6 min read • Diagnostic</span>
+<span class="text-slate-400">Enzyme Blocks</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-teal-300 transition-colors">Heme Synthesis &amp; Porphyrias Clinical Correlation</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Rate limiting ALA synthase, Acute Intermittent Porphyria vs Porphyria Cutanea Tarda, and plumbism manifestations.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Diagnostic Keys</span>
+<a class="inline-flex items-center gap-1 text-teal-300 hover:text-teal-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-teal-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(45,212,191,0.15)] group overflow-hidden" data-tags="biochemistry genetics dna repair cancer xeroderma" data-title="dna replication repair mechanisms polymerase enzymes genetics">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Eukaryotic DNA replication fork" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC64IHXwU_qTwpLh7JQO9HQacAxIrDoDCdPk4AmhDq5VovsBO1jg8lAL3J3983WRzFOPAba4nq210kMfCYK_Bte6aFJkSfDiSLLsCY6ux1cd86Ivm2ksBR__cvAGeXwE9bUFxgQFI7otm0jevw_3TKpdI4aBk78SvIr0ChFjTHqr7fmUIeWYH6whzF-0d_VZ8MpeFesMLD2JV4tJVRCIr71vNPn9KkleEHw2g7w6gtyBzaIFfFeOguuMw">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-teal-300 font-mono text-[10px]">Genetics</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-teal-300">
+<span class="">5 min read • Core Genetics</span>
+<span class="text-slate-400">Polymerases</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-teal-300 transition-colors">DNA Replication &amp; Excision Repair Mechanisms</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Leading and lagging strand synthesis, mismatch repair (Lynch syndrome), and NER enzymes in Xeroderma Pigmentosum.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Molecular Atlas</span>
+<a class="inline-flex items-center gap-1 text-teal-300 hover:text-teal-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 3. HISTOLOGY SECTION -->
+<section class="category-block flex flex-col gap-4" data-category="histology">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.25)]">
+<span class="material-symbols-outlined text-[20px]">microbiology</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-display font-bold text-lg text-white">Histology</h2>
+<span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-sky-300 font-mono text-[10px]">4 SLIDE SETS</span>
+</div>
+<p class="text-xs text-slate-400">Tissue borders, cellular architecture, special stains &amp; spotter pearls</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="prev" data-track="track-histology" title="Previous">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="next" data-track="track-histology" title="Next">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-track flex items-stretch gap-4 overflow-x-auto scroll-smooth pb-2" id="track-histology">
+<!-- Card 1 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="histology cardiovascular vessels microscopy elastic arteries" data-title="cardiovascular microvascular histology elastic vs muscular arteries">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Cross section of aorta showing elastic lamellae" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFxzem40j5wPirE9BSOavAj-Ry2FAHlprte01-3uFkyDlbZENWuj6qT2-GFvBz3siI6RWvAUrtikvA0Sn4pDjjpeeuaiq9xnZBBpetwtmOTrTNaDH5LVQSQK7vfvgZeAHFBb3zLTIJV98IOcGqe6EPvKgk8jxIYQfugmtvGAE2TcU6AW3hpPivEZuEXADpI-AcbxuUBoC-hFISwOJc2VKEYd_DMi1nyM6kjyKf-ssrDCERP8NEnvDZpA">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Vascular Microanatomy</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">4 min read • Practical Exam</span>
+<span class="text-slate-400">Verhoeff Stain</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Cardiovascular: Elastic vs Muscular Arteries</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Distinguishing tunica intima, media, and adventitia, internal elastic lamina, and arteriole wall-to-lumen ratios.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Annotated Slides</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="histology git stomach colon goblet cells esophagus" data-title="gastrointestinal tract epithelial transitions goblet cells git">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Gastroesophageal junction histology" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFZmcpl7gk3gShKWsjtMn8YZjiFcHMsvRo8hFHKzITrGJm06IrnHdVKzJSr40u2cEmCRfkyfu1RN2Gcf6PqKjGB0KNRaoq2dGi8O3iQezp9PW0FzHy8IdhIoHvNp27Nw4KrdD6fl-BNkogU7e4dPBdST_dX-PkusgxCpnYwW4dhDzweIwJpBm-einBerhbJACDKQd-wXZsttxYQMARGo_ZrKvW1abEb7WaP_JZV-Dg30PTgCbLFx4PgQ">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Digestive Tract</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">5 min read • Core Slide</span>
+<span class="text-slate-400">Z-Line Epithelia</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">GIT: Epithelial Transitions &amp; Goblet Cell Zones</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Stratified squamous to simple columnar junctions, stomach oxyntic cells, and intestinal crypts of Lieberkühn.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Spotter Guide</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="histology renal podocyte glomerulus bowman kidney" data-title="renal glomerulus podocyte architecture light microscopy kidney">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Renal corpuscle and podocyte architecture" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7xmnsrjy4ka2I0FFbTVvBg1T4U4apf_BOwo0mE8kyBI_jOijxr5Wl0TYI53Yiof9_W7W4wXwT6Qmlc0Q8zWWDkE7SYB08DTvHmcP28tPCrIfXykchYGXTUupV-et2cWmBhhxvkxVO1gnba8rTjo9jneGhcrUpqfi3rOS5SvWfQVA_Hsb6TcG8Fj756uA-DcpeqemrPa8odN13htfgsga42uM3_89BpkbbCDP-dmEYxY_kT6ONwGUBvg">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Renal Microstructure</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">6 min read • Slide Master</span>
+<span class="text-slate-400">Filtration Barrier</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Renal Glomerulus &amp; Podocyte Filtration Barrier</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Three-layered filtration barrier (fenestrations, thick GBM, slit diaphragms), and mesangial cellular matrices.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Micrograph Notes</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-sky-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(56,189,248,0.15)] group overflow-hidden" data-tags="histology lymphoid spleen thymus hassall immunology" data-title="lymphoid organs spleen thymus lymph node follicular zones">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Lymphoid tissue showing Hassall corpuscles" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_v81rGSVTJkD6iSauZ1AibkxRXM0YBqzN3Z4id6tpZjz32J7Dbox_JBB9NjhFY0PPapTvY-nzanYB6rK0S2qqfKxwhJLFivrEr4e0I3tME8pDmcfhuv5roA7SGNylk0OlLu6GMOH3OTAHy3VQlZ416K0ipY3oRBWbGb3sYHz66WoSvWnnYxqG7XyElC0BtHoMoXmUTs1hgBejn81M2N02iZETjhNR2YseSv-RY-CMK0yKJmBmubtKyg">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-sky-400 font-mono text-[10px]">Immunohistology</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-sky-300">
+<span class="">5 min read • Spotter Pearls</span>
+<span class="text-slate-400">Secondary Lymphoid</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-sky-300 transition-colors">Lymphoid Organs: Spleen, Thymus &amp; Follicular Zones</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Hassall corpuscles in thymic medulla, periarteriolar lymphoid sheaths (PALS) in splenic white pulp, and germinal follicles.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Comparative Atlas</span>
+<a class="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. OTHERS & WARD PEARLS SECTION -->
+<section class="category-block flex flex-col gap-4" data-category="others">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-[0_0_12px_rgba(99,102,241,0.25)]">
+<span class="material-symbols-outlined text-[20px]">medication</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-display font-bold text-lg text-white">Others &amp; Ward Pearls</h2>
+<span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-indigo-300 font-mono text-[10px]">3 SYNTHESES</span>
+</div>
+<p class="text-xs text-slate-400">Clinical pharmacology, pathology mechanisms &amp; inpatient calculation formulas</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="prev" data-track="track-others" title="Previous">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="carousel-btn w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer" data-dir="next" data-track="track-others" title="Next">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-track flex items-stretch gap-4 overflow-x-auto scroll-smooth pb-2" id="track-others">
+<!-- Card 1 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-indigo-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(99,102,241,0.15)] group overflow-hidden" data-tags="pharmacology autonomic receptors sympathetic parasympathetic beta alpha" data-title="first aid pharmacology autonomic receptor quick reference ans">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Pharmacology reference card mapping autonomic receptors" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC8y6ASGy1RrVdfbzhlRUH_bQVW7kHMu-6NGHshd_n3sh92EtR-IhJtZHfDQLuP0DHGne8higLuVjA_O1x6AEjsE-5JkQuYRVViXngqOop--ey3hMQs55kwmemnSrtfFxhrb0puT68xiXbX_P69A4VvYXpN5kUSnucitvG16AJ1Wx7N_5aw8D2dhUMgOpm7jGbC9mUpVT44FLxtuvlRtR3MwFZDwR3PtIbiYl4CAhmOtEnEe5di6kGfw">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-indigo-300 font-mono text-[10px]">Autonomic Pharm</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-indigo-300">
+<span class="">7 min read • Bedside Table</span>
+<span class="text-slate-400">G-Protein Second Messengers</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-indigo-300 transition-colors">First Aid Pharmacology: Autonomic Receptors</h3>
+<p class="text-xs text-slate-400 line-clamp-2">qiss and qiq mnemonic for Gq, Gi, and Gs proteins coupled to alpha/beta adrenergic and muscarinic receptors.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Decision Matrix</span>
+<a class="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-indigo-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(99,102,241,0.15)] group overflow-hidden" data-tags="ward fluids electrolyte sodium resuscitation deficit icu" data-title="fluid resuscitation electrolyte deficit calculations saline sodium">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Medical ward calculation sheet for fluid resuscitation" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhPmsUCwxj960FLETbFsrRvpSz-mpWwVxk12yZ9O9R2SBmkTxpR1voB2nAOWrm4PFNfvDj83hSRsbAzw-tlZ--o2tufFVcQ1u4HpSPzV03z2YSNOsl0i9Xa11011-x3dqu9-xkH5eAo04waFMoUVw1l1vZTG2QnccPpntolwiFYE5vJupZiI411ghS-4iBYEYTaQtf-HRADHrottu9NtECjX7m_7zAuA1gtpNSvIe_mMrhnXA11WBdBw">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-indigo-300 font-mono text-[10px]">Clinical Ward Pearls</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-indigo-300">
+<span class="">4 min read • Ward Protocol</span>
+<span class="text-slate-400">RpMC Inpatient</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-indigo-300 transition-colors">Fluid Resuscitation &amp; Electrolyte Calculations</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Parkland burn formula, Holliday-Segar 4-2-1 maintenance fluids, and safe sodium correction bounds preventing osmotic demyelination.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Formulas + Dosing</span>
+<a class="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="note-card min-w-[300px] max-w-[300px] sm:min-w-[340px] sm:max-w-[340px] flex flex-col rounded-2xl bg-[#0d1527]/60 border border-white/10 hover:border-indigo-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(99,102,241,0.15)] group overflow-hidden" data-tags="pathology necrosis apoptosis cell injury robbins reversible" data-title="general pathology reversible irreversible cell injury necrosis apoptosis">
+<div class="relative h-44 w-full bg-[#070e1d] overflow-hidden border-b border-white/10">
+<img alt="Cellular pathology flowchart of cell injury" class="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvwxh_ZW7NSk9c9Rz8mqhU7FmX4THxDugTUcfWe0ot3rCG2onuwrhS8F8-X3tHNu9nOcprlOZG9Peh9LpkR8w1m4VjA2_TBBbLEctFOUpZnPZype2P8il63FXLJ5zzvzRVR5HCNW8RRXc9y_di7xmJ4slQz-KUB-bmtkNCiPdp4Ce7ARRi-Cwk0b0451SSlSLDjN1-RJtS3WXpWRZ3iBB9UFylS3H5E4w77QGbW0I3LTT62WAbFBZwA">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-[#030712]/85 border border-white/10 backdrop-blur-md text-indigo-300 font-mono text-[10px]">Core Pathology</span>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow gap-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-indigo-300">
+<span class="">6 min read • Robbins Core</span>
+<span class="text-slate-400">Mechanisms</span>
+</div>
+<h3 class="font-display font-bold text-sm sm:text-base text-white group-hover:text-indigo-300 transition-colors">General Pathology: Reversible vs Irreversible Injury</h3>
+<p class="text-xs text-slate-400 line-clamp-2">Point of no return triggers (calcium influx, severe mitochondrial permeability), pyknosis, karyorrhexis, and necrotic morphologies.</p>
+</div>
+<div class="pt-2.5 flex items-center justify-between border-t border-white/5">
+<span class="text-[11px] text-slate-400 font-mono">Pathology Matrix</span>
+<a class="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-200 text-xs font-semibold cursor-pointer transition-colors" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<span class="">Open in Telegram</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- TELEGRAM COMMUNITY JOIN BANNER (Screen 2 Cyberpunk Aesthetic) -->
+<section class="relative rounded-3xl bg-gradient-to-r from-[#0c1a3a] via-[#09142b] to-[#040915] border border-sky-500/30 p-6 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)] overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-sky-500/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-400/40 text-sky-400 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+<span class="material-symbols-outlined text-[32px]">mark_chat_read</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-display font-bold text-lg sm:text-xl text-white">Direct Access to the Full MediNote Cloud</h3>
+<p class="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+                Join over 1,200 medical scholars receiving weekly handwritten anatomical schematics, high-yield summaries, and interactive OSCE rubrics straight from Rangpur Medical College.
+              </p>
+</div>
+</div>
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0 w-full md:w-auto">
+<a class="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-xs tracking-wide shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all cursor-pointer" href="https://t.me/medinote_139" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.922z"></path></svg>
+<span class="">Join @medinote_139</span>
+</a>
+<a class="w-full sm:w-auto text-center inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-xs font-medium transition-all cursor-pointer" href="#repositoryCarousels">
+<span class="">Explore MediNotes</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FULL CONNECT & NETWORKS FOOTER (Exact 3-column Layout from Screen 2) -->
+<footer class="w-full bg-[#030712] border-t border-white/10 mt-12 relative">
+<div class="mx-auto px-4 sm:px-6 pt-12 pb-8 max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
+<!-- Col 1: Bio & Status -->
+<div class="md:col-span-5 space-y-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 border border-sky-400/40 flex items-center justify-center overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD951IJzypqKhSFTfzkzxvf8W6bWwyiH6-QprPtjCLwI0BXGADP8ZjIyRpxaMsChaw1QgLxRSj9YN-g28bSsLX8svnJ2zXiOM433eBL7vItIWcdPrWZzgGx-zu6TlfMJg7mNVAvWFRjDKyr1bcXQX5gVT4JtOTeQVgoPljewwXk5iPirtqen3MrtxQn_3q_zzpYr7GJWWABHdADtJtgdjWZhcYGOj55Bbk0S8S_ErSsiTtWSYaDheldQmx6VpkYxb1ORRI" alt="Ahmed Istiaq Logo" class="w-full h-full object-cover rounded-full"></div>
+<div class="flex flex-col">
+<span class="font-display font-bold text-sm text-white">Ahmed Istiaq</span>
+<span class="text-[10px] font-mono text-slate-400">Portfolio &amp; Research</span>
+</div>
+</div>
+<p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Clinical Trainee at Rangpur Medical College (RpMC-54).&nbsp; Synthesizing medical sciences with&nbsp; biomedical algorithms, and digital open clinical tools.
+          </p>
+<div class="pt-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 font-mono text-[10px]">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+<span class="">RpMC Clinical Trainee &amp; Software Architect</span>
+</div>
+</div>
+</div>
+<!-- Col 2: Direct Index -->
+<div class="md:col-span-3 space-y-2">
+<div class="flex items-center gap-1 text-sky-400 mb-2">
+<span class="material-symbols-outlined text-[15px]">explore</span>
+<span class="text-[11px] font-mono uppercase tracking-wider font-bold text-white">DIRECT INDEX</span>
+</div>
+<ul class="space-y-1 text-xs">
+<li class="">
+<a class="group flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-slate-400 hover:text-white transition-all cursor-pointer" data-path="about" href="#">
+<span class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-sky-400 transition-colors"></span>
+                  Overview &amp; Bio
+                </span>
+<span class="material-symbols-outlined text-[12px] opacity-0 group-hover:opacity-100 text-sky-400 transition-all">chevron_right</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-slate-400 hover:text-white transition-all cursor-pointer" data-path="academic-journey" href="#">
+<span class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-sky-400 transition-colors"></span>
+                  Identity Matrix
+                </span>
+<span class="material-symbols-outlined text-[12px] opacity-0 group-hover:opacity-100 text-sky-400 transition-all">chevron_right</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center justify-between px-2 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-300 font-semibold transition-all shadow-[0_0_12px_rgba(56,189,248,0.15)] cursor-pointer" data-path="medinote-archive" href="#">
+<span class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-sky-400 animate-pulse"></span>
+                  MediNote Archive (@medinote_139)
+                </span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/10 text-[9px] font-mono text-sky-300">ACTIVE</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-slate-400 hover:text-white transition-all cursor-pointer" data-path="selected-projects" href="#">
+<span class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-sky-400 transition-colors"></span>
+                  Visual Diary &amp; Photos
+                </span>
+<span class="material-symbols-outlined text-[12px] opacity-0 group-hover:opacity-100 text-sky-400 transition-all">chevron_right</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Col 3: Connect & Networks -->
+<div class="md:col-span-4 space-y-2">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-[11px] font-mono uppercase tracking-wider font-bold text-white">CONNECT &amp; NETWORKS</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 font-mono text-[9px] text-emerald-400">ONLINE</span>
+</div>
+<p class="text-xs text-slate-400 mb-3 leading-relaxed">
+            Direct clinical dispatches, project updates, and open communication channels.
+          </p>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<!-- Facebook -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-sky-400/40 hover:bg-white/10 text-slate-300 hover:text-white text-xs transition-all cursor-pointer" href="https://www.facebook.com/share/1CaAhKz5Vb/" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 text-[#1877F2] fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+<span class="">Facebook</span>
+</a>
+<!-- Telegram -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-sky-400/40 hover:bg-white/10 text-slate-300 hover:text-white text-xs transition-all cursor-pointer" href="https://t.me/ahmedistiaq" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 text-[#229ED9] fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.922z"></path></svg>
+<span class="">Telegram</span>
+</a>
+<!-- WhatsApp -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-emerald-400/40 hover:bg-white/10 text-slate-300 hover:text-white text-xs transition-all cursor-pointer" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 text-[#25D366] fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">WhatsApp</span>
+</a>
+<!-- YouTube -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-red-400/40 hover:bg-white/10 text-slate-300 hover:text-white text-xs transition-all cursor-pointer" href="#" rel="noopener noreferrer">
+<svg class="w-3.5 h-3.5 text-[#FF0000] fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+<span class="">YouTube</span>
+</a>
+<!-- X -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 text-slate-300 hover:text-white text-xs transition-all cursor-pointer" href="#" rel="noopener noreferrer">
+<svg class="w-3 h-3 fill-current text-slate-200" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+<span class="">X</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Footer Bottom Bar -->
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 border-t border-white/10 font-mono">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-sky-400"></div>
+<span class="">© 2025–2026 <strong class="text-white font-semibold">Ahmed Istiaq</strong>. Rangpur Medical College. All rights reserved.</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<a class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:border-sky-400/40 text-slate-400 hover:text-sky-300 text-[11px] transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined text-[13px] text-slate-500">gavel</span>
+            Ethical Declarations
+          </a>
+<a class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:border-sky-400/40 text-slate-400 hover:text-sky-300 text-[11px] transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined text-[13px] text-slate-500">verified</span>
+            DOI Directory
+          </a>
+<a class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:border-sky-400/40 text-slate-400 hover:text-sky-300 text-[11px] transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined text-[13px] text-slate-500">key</span>
+            PGP Key
+          </a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Filter, Search & Carousel Controller Script -->
+<script>
+    (function() {
+      const searchInput = document.getElementById('repositorySearch');
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const categoryBlocks = document.querySelectorAll('.category-block');
+      const noteCards = document.querySelectorAll('.note-card');
+      const noResultsNotice = document.getElementById('noResultsNotice');
+      const resetSearchBtn = document.getElementById('resetSearchBtn');
+      const totalNotesBadge = document.getElementById('totalNotesBadge');
+
+      let currentCategory = 'all';
+
+      if (totalNotesBadge) {
+        totalNotesBadge.textContent = noteCards.length;
+      }
+
+      function applyFilters() {
+        const query = (searchInput.value || '').toLowerCase().trim();
+        let totalVisibleCards = 0;
+
+        categoryBlocks.forEach(block => {
+          const category = block.getAttribute('data-category');
+          const isCategoryMatch = (currentCategory === 'all' || currentCategory === category);
+
+          let visibleCardsInBlock = 0;
+          const cardsInBlock = block.querySelectorAll('.note-card');
+
+          cardsInBlock.forEach(card => {
+            const title = (card.getAttribute('data-title') || '').toLowerCase();
+            const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+            const textContent = card.innerText.toLowerCase();
+
+            const matchesQuery = !query || title.includes(query) || tags.includes(query) || textContent.includes(query);
+
+            if (isCategoryMatch && matchesQuery) {
+              card.classList.remove('hidden');
+              visibleCardsInBlock++;
+              totalVisibleCards++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          if (visibleCardsInBlock > 0) {
+            block.classList.remove('hidden');
+          } else {
+            block.classList.add('hidden');
+          }
+        });
+
+        if (totalVisibleCards === 0) {
+          noResultsNotice.classList.remove('hidden');
+        } else {
+          noResultsNotice.classList.add('hidden');
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+      }
+
+      // Keyboard shortcut ⌘K / Ctrl+K
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          if (searchInput) {
+            searchInput.focus();
+            searchInput.select();
+          }
+        }
+      });
+
+      // Filter tabs switching
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          currentCategory = tab.getAttribute('data-filter');
+
+          filterTabs.forEach(t => {
+            t.classList.remove('bg-sky-500', 'text-slate-950', 'shadow-[0_0_12px_rgba(56,189,248,0.4)]');
+            t.classList.add('bg-[#030712]/60', 'text-slate-300');
+          });
+
+          tab.classList.remove('bg-[#030712]/60', 'text-slate-300');
+          tab.classList.add('bg-sky-500', 'text-slate-950', 'shadow-[0_0_12px_rgba(56,189,248,0.4)]');
+
+          applyFilters();
+        });
+      });
+
+      // Reset query button
+      if (resetSearchBtn) {
+        resetSearchBtn.addEventListener('click', () => {
+          if (searchInput) {
+            searchInput.value = '';
+          }
+          currentCategory = 'all';
+          filterTabs.forEach(t => {
+            if (t.getAttribute('data-filter') === 'all') {
+              t.classList.remove('bg-[#030712]/60', 'text-slate-300');
+              t.classList.add('bg-sky-500', 'text-slate-950', 'shadow-[0_0_12px_rgba(56,189,248,0.4)]');
+            } else {
+              t.classList.remove('bg-sky-500', 'text-slate-950', 'shadow-[0_0_12px_rgba(56,189,248,0.4)]');
+              t.classList.add('bg-[#030712]/60', 'text-slate-300');
+            }
+          });
+          applyFilters();
+        });
+      }
+
+      // Carousel horizontal navigation buttons
+      const carouselBtns = document.querySelectorAll('.carousel-btn');
+      carouselBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const trackId = btn.getAttribute('data-track');
+          const direction = btn.getAttribute('data-dir');
+          const track = document.getElementById(trackId);
+          if (track) {
+            const scrollAmount = 360;
+            track.scrollBy({
+              left: direction === 'next' ? scrollAmount : -scrollAmount,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>
