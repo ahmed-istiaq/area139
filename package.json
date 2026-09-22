@@ -1,0 +1,21 @@
+{
+  "name": "area139",
+  "version": "1.0.0",
+  "description": "Area 139 - Ahmed Istiaq Medical Notes Archive",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static HTML site - no build required'",
+    "dev": "npx serve .",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "medical",
+    "notes",
+    "education"
+  ],
+  "author": "Ahmed Istiaq",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
