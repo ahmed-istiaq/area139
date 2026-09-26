@@ -3684,7 +3684,8 @@ $('postForm')?.addEventListener('submit',async e=>{
           body:{
             title:'New Post Published ✦',
             message:`${data.title} has been published on AREA_139.`,
-            url:notificationUrl
+            url:notificationUrl,
+            image:data.thumbnail_url || ''
           }
         }
       );
