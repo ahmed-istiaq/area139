@@ -1,0 +1,21 @@
+{
+  "name": "Area 139 — Ahmed Istiaq | MediNote",
+  "short_name": "Area 139",
+  "description": "MediNote — a curated medical learning archive by Ahmed Istiaq.",
+  "start_url": "/area139/",
+  "scope": "/area139/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["education", "medical"],
+  "icons": [
+    {
+      "src": "assets/Website/logo.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
